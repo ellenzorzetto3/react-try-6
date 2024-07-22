@@ -9,7 +9,7 @@ export default function Weather() {
         <form>
           <div className="row">
             <div className="col-9">
-              <input type="text" className="form-control" />
+              <input type="search" className="form-control" autoFocus="on" />
             </div>
             <div className="col-3">
               <input type="submit" value="search" className="btn btn-primary" />
@@ -21,13 +21,13 @@ export default function Weather() {
           <li>Friday 14:12, </li>
           <li>clear sky</li>
         </ul>
-        <div className="row">
+        <div className="row mt-3">
           <div className="col-6">
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
               alt="Cloudy"
             />
-            <span>25°C</span>
+            <span>25</span>°C
           </div>
           <div className="col-6">
             <ul>
