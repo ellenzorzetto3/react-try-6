@@ -1,0 +1,45 @@
+form {
+  margin: 40px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.Weather {
+  text-align: center;
+}
+.search {
+  background-color: #f9f7fe;
+  border: none;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  padding: 10px;
+  padding-bottom: 5px;
+  width: 45%;
+  border-radius: 6px;
+  margin: 20px auto;
+  display: inline-block;
+}
+.btn {
+  padding: 10px;
+  border-radius: 6px;
+  margin: 20px auto;
+  line-height: 1;
+  border: none;
+  display: inline-block;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  padding: 20px;
+}
+
+.col-2 {
+  margin: 20px;
+}
