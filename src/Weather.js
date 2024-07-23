@@ -1,6 +1,7 @@
 import React from "react";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 export default function Weather() {
   return (
@@ -23,11 +24,15 @@ export default function Weather() {
         </ul>
         <div className="row mt-3">
           <div className="col-6">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
-              alt="Cloudy"
-            />
-            <span>25</span>°C
+            <div className="clearfix">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+                alt="Cloudy"
+                className="float-left"
+              />
+              <span className="temperature">25</span>
+              <span className="unit">°C</span>
+            </div>
           </div>
           <div className="col-6">
             <ul>
