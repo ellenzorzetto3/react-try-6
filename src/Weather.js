@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 export default function Weather(props) {
-   const [weather, setWeather] = useState({ ready: false });
+  const [weather, setWeather] = useState({ ready: false });
 
   function displayData(response) {
     console.log(response.data);
@@ -17,9 +17,8 @@ export default function Weather(props) {
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       precipitation: 15,
-      date: "Friday, 18:44"
+      date: new Date(response.data.time * 1000),
     });
-    
   }
 
   if (weather.ready) {
@@ -42,7 +41,7 @@ export default function Weather(props) {
           </form>
           <h1>{weather.city}</h1>
           <ul>
-            <li>{weather.date}, </li>
+            <li>{weather.date.getDate()}, </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
           <div className="row mt-3">
@@ -72,7 +71,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    
     const apiKey = `o3bfb209f55e8951210f40e6476fat3f`;
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
 
