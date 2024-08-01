@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import React, { useState } from "react";
 import WeatherData from "./WeatherData";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -36,8 +37,8 @@ export default function Weather(props) {
         wind: data.wind.speed,
         city: data.city,
         description: data.condition.description,
-        icon: data.condition.icon, // Usando o ícone da condição
-        precipitation: 15, // Parece que a API não fornece essa informação; talvez uma estimativa ou um valor fictício seja usado
+        icon: data.condition.icon, 
+        
         date: new Date(data.time * 1000),
       });
     } else {
@@ -69,6 +70,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherData weather={weather} />
+          <WeatherForecast />
         </div>
       </div>
     );
