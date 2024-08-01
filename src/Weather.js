@@ -1,13 +1,19 @@
+
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WeatherData from "./WeatherData";
 import WeatherForecast from "./WeatherForecast";
+
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({ ready: false });
   const [cityName, setCityName] = useState(props.defaultCity);
+
+  useEffect(() => {
+    Search();
+  }, []);
 
   function Search() {
     const apiKey = `o3bfb209f55e8951210f40e6476fat3f`;
@@ -26,8 +32,6 @@ export default function Weather(props) {
   }
 
   function displayData(response) {
-    console.log(response.data);
-
     const data = response.data;
     if (data && data.temperature && data.temperature.current !== undefined) {
       setWeather({
@@ -37,8 +41,7 @@ export default function Weather(props) {
         wind: data.wind.speed,
         city: data.city,
         description: data.condition.description,
-        icon: data.condition.icon, 
-        
+        icon: data.condition.icon,
         date: new Date(data.time * 1000),
       });
     } else {
@@ -69,13 +72,12 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-          <WeatherData weather={weather} />
+          <WeatherData data={weather} />
           <WeatherForecast />
         </div>
       </div>
     );
   } else {
-    Search();
     return "Loading...";
   }
 }
