@@ -33,6 +33,7 @@ export default function WeatherData(props) {
           </ul>
         </div>
       </div>
+     
     </div>
   );
 }

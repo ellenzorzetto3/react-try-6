@@ -8,9 +8,18 @@ function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Paris" />
+        <footer>
+          This project was coded by{" "}
+          <a href="https://www.linkedin.com/in/ellen-zorzetto-1a1777b5/">
+            Ellen Zorzetto
+          </a>{" "}
+          and is open-sourced on{" "}
+          <a href="https://github.com/ellenzorzetto3/react-try-6">GitHub</a>
+        </footer>
       </div>
     </div>
   );
+  
 }
 
 export default App;
